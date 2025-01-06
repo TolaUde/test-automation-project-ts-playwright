@@ -1,0 +1,21 @@
+{
+    "books": [
+      {
+        "title": "Calculus Made Easy",
+        "author": "Silvanus P. Thompson",
+        "price": 13.00,
+        "originalPrice": 20.00,
+        "isOnSale": true
+      },
+      {
+        "title": "History of Astronomy",
+        "author": "George Forbes",
+        "price": 20.00,
+        "isOnSale": false
+      }
+    ],
+    "searchQueries": {
+      "valid": "Calculus",
+      "noResults": "NonexistentBook123"
+    }
+  }

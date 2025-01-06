@@ -29,7 +29,7 @@ export default defineConfig({
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    baseURL: 'http://localhost:8080',
+    baseURL: process.env.BASE_URL || 'http://localhost:8080',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     trace: 'retain-on-failure',
@@ -44,20 +44,37 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
 
     {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      name: 'API Tests',
+      testMatch: '**/api/specs/*.spec.ts',   // Only API test files
     },
-
     {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+      name: 'UI Tests Desktop Chrome',
+      testMatch: '**/ui/specs/*.spec.ts',    // Only UI test files
+      use: { browserName: 'chromium', viewport: { width: 1280, height: 720 } },
+    }
+    // ,
+    // {
+    //   name: 'UI Tests Mobile Chrome',
+    //   testMatch: '**/ui/specs/*.spec.ts',    // Only UI test files
+    //   use: { ...devices['iPhone 12'] },
+    // }
+
+    // {
+    //   name: 'chromium',
+    //   use: { ...devices['Desktop Chrome'] },
+    // },
+
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
+
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {
