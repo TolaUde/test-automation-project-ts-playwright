@@ -1,0 +1,16 @@
+{
+  "name": "a-test-automation-project-ts-playwright",
+  "version": "1.0.0",
+  "description": "This project tests [Bookstore Application](https://github.com/Testelka/test-bookstore) and uses:",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.4",
+    "allure-playwright": "^3.0.7",
+    "playwright-ctrf-json-reporter": "^0.0.18"
+  }
+}
